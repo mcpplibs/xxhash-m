@@ -1,0 +1,17 @@
+{
+  "upstream": "https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz",
+  "upstream_sha256": "aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80",
+  "pruning": "Nothing of xxHash is vendored: the library is compat.xxhash 0.8.3's, from the same tarball. Its README and license are retained here. The conformance run builds the release's tests/sanity_test.c against compat.xxhash, from the tarball downloaded at test time, with its XXH_IMPLEMENTATION definition replaced so that the library computes every hash.",
+  "documents": [
+    {
+      "path": "upstream/xxhash/README.md",
+      "source": "https://github.com/Cyan4973/xxHash/blob/v0.8.3/README.md",
+      "sha256": "750a69246094fb9db7fe857cc81d1e9a95e30e93b0d534e461c1c762061081f1"
+    },
+    {
+      "path": "upstream/xxhash/LICENSE",
+      "source": "https://github.com/Cyan4973/xxHash/blob/v0.8.3/LICENSE",
+      "sha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a"
+    }
+  ]
+}

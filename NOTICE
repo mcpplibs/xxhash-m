@@ -1,0 +1,13 @@
+xxhash-m: C++ module wrapper
+Copyright (c) 2026 mcpp-community contributors
+
+The wrapper contributions are licensed under the Apache License, Version 2.0.
+Upstream code, copied interfaces and dependencies retain their original
+licenses and copyright notices. xxHash is distributed under the BSD 2-Clause
+license:
+
+  Copyright (c) 2012-2021 Yann Collet
+
+Its original README and license are retained in upstream/xxhash/. The library
+itself is provided by compat.xxhash from the same release. Provenance and
+checksums are recorded in upstream/documents.json.
