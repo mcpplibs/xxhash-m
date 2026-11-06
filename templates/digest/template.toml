@@ -1,0 +1,4 @@
+[template]
+description  = "Hashing with import mcpplibs.mwrap.xxhash: XXH3-64, XXH3-128 and XXH64 of a text or a file, one-shot and streamed"
+default      = true
+post_message = "Run `mcpp run`, or `mcpp run -- <file>` to hash a file of your own."

@@ -1,0 +1,18 @@
+# What tools/generate.py cannot read from the headers; everything else it can.
+name          = "xxhash"
+title         = "xxHash 0.8.3"
+compat        = "xxhash"
+version       = "0.8.3"
+license       = "BSD 2-Clause license"
+generated-on  = "linux"
+headers       = ["xxhash.h"]
+owned         = ["xxhash.h"]
+
+# How xxhash.h writes the declarations, not what xxHash offers: linkage
+# (XXH_PUBLIC_API), function attributes (XXH_CONSTF, XXH_PUREF, XXH_MALLOCF,
+# XXH_NOESCAPE, XXH_FALLTHROUGH), the attribute probes behind them, and the
+# C23 version number those probes compare with (XXH_C23_VN).
+syntax = [
+  "XXH_PUBLIC_API", "XXH_CONSTF", "XXH_PUREF", "XXH_MALLOCF", "XXH_NOESCAPE", "XXH_FALLTHROUGH",
+  "XXH_HAS_ATTRIBUTE", "XXH_HAS_CPP_ATTRIBUTE", "XXH_HAS_C_ATTRIBUTE", "XXH_HAS_INCLUDE", "XXH_C23_VN",
+]

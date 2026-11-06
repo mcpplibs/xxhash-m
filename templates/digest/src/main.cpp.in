@@ -1,0 +1,32 @@
+// {{project.name}}: xxHash through import mcpplibs.mwrap.xxhash. The functions and
+// types are xxHash's own names; the constants are in mcpplibs::mwrap::xxhash::macros.
+import std;
+import mcpplibs.mwrap.xxhash;
+
+int main(int argc, char** argv)
+{
+    std::string text = "xxHash through a C++ module";
+    if (argc > 1) {
+        std::ifstream file(argv[1], std::ios::binary);
+        text.assign(std::istreambuf_iterator<char>(file), {});
+    }
+
+    // One call each.
+    const XXH64_hash_t h3 = XXH3_64bits(text.data(), text.size());
+    const XXH128_hash_t h128 = XXH3_128bits(text.data(), text.size());
+    const XXH64_hash_t h64 = XXH64(text.data(), text.size(), 0);
+
+    // The same XXH3-64, streamed in 64-byte pieces.
+    XXH3_state_t* state = XXH3_createState();
+    XXH3_64bits_reset(state);
+    for (std::size_t at = 0; at < text.size(); at += 64)
+        XXH3_64bits_update(state, text.data() + at, std::min<std::size_t>(64, text.size() - at));
+    const bool same = XXH3_64bits_digest(state) == h3;
+    XXH3_freeState(state);
+
+    std::println("{} bytes", text.size());
+    std::println("XXH3-64   {:016x}{}", h3, same ? "" : " (streamed DIFFERENT)");
+    std::println("XXH3-128  {:016x}{:016x}", h128.high64, h128.low64);
+    std::println("XXH64     {:016x}", h64);
+    return same ? 0 : 1;
+}

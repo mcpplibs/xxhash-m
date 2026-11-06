@@ -1,0 +1,43 @@
+# Module wrapper; upstream API preserved. Policy: mcpp-index/docs/mwrap.md.
+[package]
+namespace   = "mcpplibs.mwrap"
+name        = "xxhash"
+version     = "0.8.3"
+description = "xxHash 0.8.3 C++ modules for mcpp (import mcpplibs.mwrap.xxhash;): XXH32, XXH64 and XXH3 (64 and 128 bits), one-shot and streaming, with canonical forms, over compat.xxhash"
+license     = "Apache-2.0"
+authors     = ["mcpp-community"]
+repo        = "https://github.com/mcpplibs/xxhash-m"
+platforms   = ["linux", "macos", "windows"]
+
+[targets.xxhash]
+kind = "lib"
+
+[build]
+sources      = ["src/*.cppm"]
+# <mwrap/xxhash/macros.hpp>: the macros of xxhash.h that are not constants.
+include_dirs = ["include"]
+
+[dependencies]
+compat.xxhash = "0.8.3"
+
+[test]
+discover = ["tests/*.cpp"]
+
+[package.metadata.mwrap]
+upstream-version = "0.8.3"
+
+[[runtime.deploy]]
+from = "LICENSE"
+to   = "licenses/xxhash"
+
+[[runtime.deploy]]
+from = "NOTICE"
+to   = "licenses/xxhash"
+
+[[runtime.deploy]]
+from = "upstream/xxhash/README.md"
+to   = "licenses/xxhash/upstream/xxhash"
+
+[[runtime.deploy]]
+from = "upstream/xxhash/LICENSE"
+to   = "licenses/xxhash/upstream/xxhash"
