@@ -2,7 +2,7 @@
 [package]
 namespace   = "mcpplibs.mwrap"
 name        = "xxhash"
-version     = "0.8.3"
+version     = "0.8.3.1"
 description = "xxHash 0.8.3 C++ modules for mcpp (import mcpplibs.mwrap.xxhash;): XXH32, XXH64 and XXH3 (64 and 128 bits), one-shot and streaming, with canonical forms, over compat.xxhash"
 license     = "Apache-2.0"
 authors     = ["mcpp-community"]

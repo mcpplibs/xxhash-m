@@ -23,7 +23,7 @@ C++ 常量。每次 CI 都在同一份库上运行上游自己的 sanity 测试�
 ## 快速开始
 
 ```sh
-mcpp new digest --template mcpplibs.mwrap.xxhash@0.8.3
+mcpp new digest --template mcpplibs.mwrap.xxhash@0.8.3.1
 cd digest
 mcpp run
 ```
@@ -32,7 +32,7 @@ mcpp run
 
 ```toml
 [dependencies]
-"mcpplibs.mwrap.xxhash" = "0.8.3"
+mcpplibs.mwrap.xxhash = "0.8.3.1"
 ```
 
 ```cpp
