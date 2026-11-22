@@ -26,7 +26,7 @@ test passes its 49948 vectors on every CI run over the same library.
 ## Getting started
 
 ```sh
-mcpp new digest --template mcpplibs.mwrap.xxhash@0.8.3
+mcpp new digest --template mcpplibs.mwrap.xxhash@0.8.3.1
 cd digest
 mcpp run
 ```
@@ -36,7 +36,7 @@ file, and checks that streaming gives the same XXH3-64.
 
 ```toml
 [dependencies]
-"mcpplibs.mwrap.xxhash" = "0.8.3"
+mcpplibs.mwrap.xxhash = "0.8.3.1"
 ```
 
 ```cpp
